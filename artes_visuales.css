@@ -1,0 +1,145 @@
+/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
+:root {
+    --fondo: #f1efeb;          /* fondo de la página */
+    --tarjeta: #ffffff;        /* fondo de las tarjetas */
+    --texto: #222222;          /* color principal del texto */
+    --texto-suave: #696560;    /* textos secundarios */
+    --borde: #dcd8d1;          /* color de los bordes */
+    --acento: #222222;         /* color de los botones */
+    --estrella: #e0a100;       /* dorado de las estrellas */
+    --estrella-vacia: #cfcac2; /* gris de las estrellas sin marcar */
+}
+/* ===== REINICIO BÁSICO ===== */
+* {
+    box-sizing: border-box;    /* el padding no agranda los elementos */
+    margin: 0;
+    padding: 0;
+}
+/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+    padding: 24px 16px;
+}
+/* Contenedor central con ancho máximo */
+.app {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* ===== ENCABEZADO ===== */
+.encabezado {
+    margin-bottom: 24px;
+}
+.encabezado h1 {
+    font-size: 2.2rem;
+}
+.encabezado p {
+    color: var(--texto-suave);
+}
+.resumen {
+    margin-top: 6px;
+    font-weight: bold;
+    color: var(--estrella) !important;
+}
+/* ===== GALERÍA ===== */
+.galeria {
+    display: grid;
+    /* columnas automáticas: se acomodan según el ancho disponible */
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+/* ===== TARJETAS ===== */
+.tarjeta {
+    background: var(--tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    overflow: hidden;          /* recorta la obra en las esquinas */
+}
+/* La obra (SVG) ocupa todo el ancho de la tarjeta */
+.lienzo {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.contenido {
+    padding: 16px;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+.contenido h2 {
+    font-size: 1.15rem;
+}
+.detalle {
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+}
+/* ===== ESTRELLAS ===== */
+.estrellas {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 10px 0;
+}
+.estrella {
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--estrella-vacia);
+    cursor: pointer;
+}
+/* Estrella marcada (clase agregada con JavaScript) */
+.estrella.activa {
+    color: var(--estrella);
+}
+.puntaje {
+    margin-left: 8px;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+}
+/* ===== COMENTARIO Y BOTÓN ===== */
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+textarea:focus {
+    outline: 2px solid var(--acento);
+}
+.btn-ampliar,
+.btn-cerrar {
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: var(--acento);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+/* ===== VISOR (ventana emergente) ===== */
+.visor {
+    margin: auto;              /* centra la ventana en la pantalla */
+    width: min(90vw, 640px);
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+}
+/* Fondo oscuro detrás de la ventana */
+.visor::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+.visor h2 {
+    margin-bottom: 12px;
+}
+.visor svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
