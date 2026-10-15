@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --fondo: #f1efeb;
+    --tarjeta: #ffffff;
+    --texto: #222222;
+    --texto-suave: #696560;
+    --borde: #dcd8d1;
+    --acento: #222222;
+    --estrella: #e0a100;
+    --estrella-vacia: #cfcac2;
+}
+body {
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.5;
+}
+/*---------------------------*/
+/*--|estilo_artes_visuales|--*/
+/*---------------------------*/
+button,
+textarea {
+    font: inherit;
+}
+button {
+    cursor: pointer;
+}
+.app {
+    width: min(100% - 32px, 1000px);
+    margin: 0 auto;
+    padding: 32px 0;
+}
+/*-------------------------------*/
+/*--|encabezado_artes_visuales|--*/
+/*-------------------------------*/
+.encabezado {
+    margin-bottom: 28px;
+    text-align: center;
+}
+.encabezado h1 {
+    margin-bottom: 10px;
+    font-size: clamp(28px, 5vw, 40px);
+}
+.encabezado p {
+    color: var(--texto-suave);
+}
+.resumen {
+    margin-top: 12px;
+    font-weight: bold;
+}
+/*----------------------*/
+/*--|galeria_de_obras|--*/
+/*----------------------*/
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    align-items: start;
+}
+/*-----------------------*/
+/*--|tarjetas_de_obras|--*/
+/*-----------------------*/
+.tarjeta {
+    overflow: hidden;
+    background: var(--tarjeta);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+}
+.tarjeta > svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+}
+/*-------------------------------*/
+/*--|contenido_de_las_tarjetas|--*/
+/*-------------------------------*/
+.contenido {
+    padding: 18px;
+}
+.contenido h2 {
+    margin-bottom: 6px;
+    font-size: 22px;
+}
+.detalle {
+    min-height: 48px;
+    margin-bottom: 16px;
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+/*--------------------------*/
+/*--|sistema_de_estrellas|--*/
+/*--------------------------*/
+.estrellas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 14px;
+}
+.estrellas button {
+    padding: 2px;
+    border: none;
+    background: transparent;
+    color: var(--estrella-vacia);
+    font-size: 24px;
+}
+.estrellas button.activa {
+    color: var(--estrella);
+}
+.estrellas button:focus-visible {
+    outline: 2px solid var(--acento);
+    outline-offset: 3px;
+}
+.estrellas .valoracion {
+    margin-left: 8px;
+    color: var(--texto-suave);
+    font-size: 14px;
+}
+/*--------------------------*/
+/*--|campo_de_comentarios|--*/
+/*--------------------------*/
+.contenido textarea {
+    display: block;
+    width: 100%;
+    min-height: 90px;
+    margin-bottom: 12px;
+    padding: 10px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    background: var(--tarjeta);
+    color: var(--texto);
+    resize: vertical;
+}
+.contenido textarea:focus {
+    border-color: var(--acento);
+    outline: 2px solid transparent;
+}
+/*------------------------*/
+/*--|boton_para_ampliar|--*/
+/*------------------------*/
+.btn-ampliar {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--acento);
+    border-radius: 6px;
+    background: var(--acento);
+    color: #ffffff;
+}
+.btn-ampliar:hover {
+    opacity: 0.85;
+}
+/*--------------------*/
+/*--|visor_de_obras|--*/
+/*--------------------*/
+.visor {
+    width: min(90%, 700px);
+    max-height: 90vh;
+    margin: auto;
+    padding: 24px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background: var(--tarjeta);
+    color: var(--texto);
+    overflow: auto;
+}
+.visor::backdrop {
+    background: rgb(0 0 0 / 65%);
+}
+.visor-contenido h2 {
+    margin-bottom: 16px;
+}
+#visorObra svg {
+    display: block;
+    width: 100%;
+    max-height: 60vh;
+    margin-bottom: 18px;
+    object-fit: contain;
+}
+#btnCerrar {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: var(--acento);
+    color: #ffffff;
+}
+#btnCerrar:hover {
+    opacity: 0.85;
+}

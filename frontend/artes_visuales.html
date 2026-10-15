@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artes visuales</title>
+    <link rel="stylesheet" href="artes_visuales.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="artes_visuales.js" defer></script>
+</head>
+<body>
+    <!----------------------------------->
+    <!--|estructuracion_artes_visuales|-->
+    <!----------------------------------->
+    <main class="app">
+        <header class="encabezado">
+            <h1>Artes Visuales</h1>
+            <p>Tres obras abstractas. Valóralas y deja tu comentario.</p>
+            <p id="resumen" class="resumen"></p>
+        </header>
+        <!---------------------->
+        <!--|galeria_de_obras|-->
+        <!---------------------->
+        <section class="galeria">
+            <article class="tarjeta" data-id="atardecer">
+                <svg viewBox="0 0 300 200" role="img" aria-label="Obra abstracta inspirada en un atardecer">
+                    <rect width="300" height="200" fill="#f4a261"/>
+                    <circle cx="150" cy="90" r="55" fill="#e76f51"/>
+                    <path d="M0 140 Q75 110 150 145 T300 135 V200 H0Z" fill="#264653"/>
+                    <path d="M0 165 Q80 145 160 170 T300 160 V200 H0Z" fill="#2a9d8f"/>
+                </svg>
+                <div class="contenido">
+                    <h2>Atardecer</h2>
+                    <p class="detalle">Colores cálidos y formas inspiradas en el horizonte.</p>
+                    <div class="estrellas"></div>
+                    <textarea placeholder="Escribe tu comentario..." aria-label="Comentario sobre Atardecer"></textarea>
+                    <button class="btn-ampliar" data-ampliar type="button">Ampliar obra</button>
+                </div>
+            </article>
+            <!--------------->
+            <!--|obra_olas|-->
+            <!--------------->
+            <article class="tarjeta" data-id="olas">
+                <svg viewBox="0 0 300 200" role="img" aria-label="Obra abstracta inspirada en las olas del mar">
+                    <rect width="300" height="200" fill="#caf0f8"/>
+                    <path d="M0 55 Q45 15 90 55 T180 55 T300 55 V200 H0Z" fill="#00b4d8"/>
+                    <path d="M0 100 Q50 60 100 100 T200 100 T300 100 V200 H0Z" fill="#0077b6"/>
+                    <path d="M0 150 Q40 115 80 150 T160 150 T240 150 T300 150 V200 H0Z" fill="#03045e"/>
+                </svg>
+                <div class="contenido">
+                    <h2>Olas</h2>
+                    <p class="detalle">Movimiento y armonía a través de formas azules.</p>
+                    <div class="estrellas"></div>
+                    <textarea placeholder="Escribe tu comentario..." aria-label="Comentario sobre Olas"></textarea>
+                    <button class="btn-ampliar" data-ampliar type="button">Ampliar obra</button>
+                </div>
+            </article>
+            <!----------------------->
+            <!--|obra_constelacion|-->
+            <!----------------------->
+            <article class="tarjeta" data-id="constelacion">
+                <svg viewBox="0 0 300 200" role="img" aria-label="Obra abstracta inspirada en una constelación">
+                    <rect width="300" height="200" fill="#14213d"/>
+                    <circle cx="55" cy="45" r="5" fill="#fca311"/>
+                    <circle cx="120" cy="80" r="4" fill="#ffffff"/>
+                    <circle cx="190" cy="35" r="6" fill="#fca311"/>
+                    <circle cx="245" cy="100" r="5" fill="#ffffff"/>
+                    <circle cx="145" cy="155" r="5" fill="#fca311"/>
+                    <circle cx="70" cy="145" r="4" fill="#ffffff"/>
+                    <path d="M55 45 L120 80 L190 35 L245 100 L145 155 L70 145 L55 45" fill="none" stroke="#e5e5e5" stroke-width="2"/>
+                </svg>
+                <div class="contenido">
+                    <h2>Constelación</h2>
+                    <p class="detalle">Estrellas y conexiones sobre un cielo nocturno.</p>
+                    <div class="estrellas"></div>
+                    <textarea placeholder="Escribe tu comentario..." aria-label="Comentario sobre Constelación"></textarea>
+                    <button class="btn-ampliar" data-ampliar type="button">Ampliar obra</button>
+                </div>
+            </article>
+        </section>
+        <!-------------------->
+        <!--|visor_de_obras|-->
+        <!-------------------->
+        <dialog id="visor" class="visor">
+            <div class="visor-contenido">
+                <h2 id="visorTitulo"></h2>
+                <div id="visorObra"></div>
+                <button id="btnCerrar" type="button">Cerrar</button>
+            </div>
+        </dialog>
+    </main>
+</body>
+</html>
